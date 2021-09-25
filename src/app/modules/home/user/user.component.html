@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 20px">
+      <button class="btn btn-primary" (click)="addUser(mymodal)"> Add User</button>
+      <button class="btn btn-danger" style="float: left; margin-left: 83%;" (click)="logout()">Logout</button>
+  </div>
+  <div class="row">
+    <table class="table" *ngIf="!showLoader && users && users.length > 0">
+      <thead>
+      <tr>
+        <th scope="col">#username</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Phone</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.user.username}}</td>
+        <td>{{user.user.name.first + ' ' + user.user.name.last}}</td>
+        <td>{{user.user.gender}}</td>
+        <td>{{user.user.email}}</td>
+        <td>{{user.user.password}}</td>
+        <td>{{user.user.dob}}</td>
+        <td>{{user.user.phone}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!showLoader && users && users.length == 0">
+      No Students found!
+    </div>
+
+    <div *ngIf="showLoader" class="text-center">
+      <div class="spinner-border" role="status">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #mymodal let-modal>
+  <add-user (closeDialog)="closeDialog(modal, $event)"></add-user>
+</ng-template>

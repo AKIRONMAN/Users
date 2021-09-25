@@ -1,0 +1,46 @@
+<form>
+  <div class="form-group">
+    <app-input-text
+      [fieldMeta]="firstNameField"
+      [formGroup]="formGroup"></app-input-text>
+    <app-input-text
+      [fieldMeta]="titleField"
+      [formGroup]="formGroup"
+    ></app-input-text>
+    <app-input-text
+      [fieldMeta]="lastNameField"
+      [formGroup]="formGroup"></app-input-text>
+  </div>
+  <div class="form-group">
+    <app-input-text [fieldMeta]="emailField"
+                    [formGroup]="formGroup"></app-input-text>
+    <app-input-text
+      [formGroup]="formGroup"
+      [fieldMeta]="mobileField">
+    </app-input-text>
+  </div>
+  <div class="form-group fields">
+    <app-input-text
+      [formGroup]="formGroup"
+      [fieldMeta]="userNameField">
+    </app-input-text>
+  </div>
+  <div class="form-group fields">
+    <app-input-text
+      [formGroup]="formGroup"
+      [fieldMeta]="dateField">
+    </app-input-text>
+  </div>
+  <div class="form-group fields ">
+    <app-input-text
+      [formGroup]="formGroup"
+      [fieldMeta]="passwordField">
+    </app-input-text>
+  </div>
+  <div class="form-group fields">
+    <div>
+      <input  type="radio" value="male" name="gender" [(ngModel)]="gender"  required> Male
+      <input  type="radio" value="female" name="gender" [(ngModel)]="gender"  required> Female
+    </div>
+  </div>
+</form>
